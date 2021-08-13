@@ -57,7 +57,36 @@ print(regresson.coef_)
 #preidction_reg = regresson.predict(X_test) 
 y_pred = regresson.predict(X_test)
 ##print(accuracy_score(y_test,preidction_reg))
+# setting plot style
+from matplotlib import style
+import matplotlib.pyplot as plt
+plt.style.use('fivethirtyeight')
+
+  
+## plotting residual errors in training data
+plt.scatter(regresson.predict(X_train), regresson.predict(X_train) - y_train,
+            color = "green", s = 10, label = 'Train data')
+  
+## plotting residual errors in test data
+plt.scatter(regresson.predict(X_test), regresson.predict(X_test) - y_test,
+            color = "blue", s = 10, label = 'Test data')
+  
+## plotting line for zero residual error
+plt.hlines(y = 0, xmin = 0, xmax = 50, linewidth = 2)
+
+## plot title
+plt.title("Titanic Survivors")
+## plotting legend
+plt.legend(loc = 'upper right')
+plt.show()
+plt.style.use('dark_background')
+plt.show()
+plt.style.use('Solarize_Light2')
+plt.show()
+
+  
+## method call for showing the plot
 
 dataframe = pd.DataFrame({"PassengerId" : y_test.values  ,"Survived": y_pred ,})
 ##Download the CSV
-dataframe.to_csv("Submission_Linear.csv")
+dataframe.to_csv("Submission_Linear.csv",index= False)
