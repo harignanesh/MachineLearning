@@ -1,0 +1,100 @@
+import pandas as pd
+import numpy as np
+from sklearn import preprocessing as prepo
+from sklearn.linear_model import LogisticRegression as LogReg
+from sklearn.linear_model import LinearRegression as LinReg
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+from matplotlib import style
+import matplotlib.pyplot as plt
+
+class TitanicSurvivors:
+    #Statisc Variables
+    def __init__(self, train_dataset, test_dataset):
+        train_dataset =""
+        test_dataset=""
+        test_Passenger_Ids = ""
+
+
+    def Load_data():
+        #Read the Data Set
+        train_dataset = pd.read_csv("train.csv")
+        test_dataset = pd.read_csv("test.csv")
+        test_Passenger_Ids =  test_dataset["PassengerId"]
+        print("Gathering the Dataset")
+        return train_dataset,test_dataset,test_Passenger_Ids
+
+    def Remove_UnwantedColumns_InvalidData(train_dataset,test_dataset):
+        #Remove columns that are not required
+        train_dataset.drop(["Name","Ticket","Fare","Cabin"],inplace = True,axis=1)
+        test_dataset.drop(["Name","Ticket","Fare","Cabin"],inplace = True,axis=1)
+        print("Dropping Unwanted Columns -Name,Ticket,Fare,Cabin")
+        #Remove Invalid Data
+        cols = ["Age","SibSp","Parch"]
+        print("Started Removing the Invalid data from -{0}",cols )
+        for x in cols:
+            train_dataset[x].fillna(train_dataset[x].mean(),inplace = True)
+            test_dataset[x].fillna(test_dataset[x].mean(),inplace = True)
+        print("Successfully Removed the Invalid data from -{0}",cols )
+        return train_dataset,test_dataset
+
+    def EncodingLabel(train_dataset,test_dataset):
+        #Convert the Categorical Data to Numerical Data
+        label_encoding = prepo.LabelEncoder()
+        columns = ["Sex","Embarked"]
+        print("Number of Columns to be Label Encoded is -{0} ",len(columns) )
+        for col in columns:
+            train_dataset[col] = label_encoding.fit_transform(train_dataset[col])
+            test_dataset[col] = label_encoding.fit_transform(test_dataset[col])
+        print("Successfully Encoded {0} columns  ",len(columns))
+        return train_dataset,test_dataset
+
+    def SplittingDataFor_Training_Testing(train_dataset,test_dataset):
+        y=train_dataset["Survived"]
+        X=train_dataset.drop("Survived", axis =1)
+        print("Train Dataset started")
+        X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2,random_state=42)
+        print("Successfully split the Train & Test Dataset of count {0} , {1} ",len(X_train),len(X_test))
+        return X_train,X_test,y_train,y_test
+
+
+    def Survivor_LogisticRegression(X_train,X_test,y_train,y_test,test_Passenger_Ids):
+        #Creating an LogisticRegression
+        print("Creating Instance of Logistic Regression")
+        clf = LogReg(random_state=0, max_iter=1000)
+        print("Training Model")
+        clf.fit(X_train,y_train)
+        prediction_log =clf.predict(X_test)
+        submission_preds = clf.predict(X_test)
+        print("The accuracy of the Model is {}".format(accuracy_score(y_test,prediction_log)))
+        dataframe = pd.DataFrame({"PassengerId" : test_Passenger_Ids.values  ,"Survived": submission_preds ,})
+        dataframe.to_csv("Submission_Logistic.csv",index=False)
+
+
+    def Survivor_LinearRegression(X_train,X_test,y_train,y_test,test_Passenger_Ids):
+        #Creating an LinearRegression
+        print("Creating Instance of Linear Regression")
+        regresson=LinReg()  
+        print("Training Model")
+        regresson.fit(X_train,y_train)  
+        #To retrieve the intercept:
+        print("The Intercept Value{}".format(regresson.intercept_))
+        #For retrieving the slope:
+        print("The Co-Efficient value is {}".format(regresson.coef_))
+
+        y_pred = regresson.predict(X_test)
+        print("The accuracy of the Model is {}".format(regresson.score(X_test,y_test)))
+        ## method call for showing the plot
+        dataframe = pd.DataFrame({"PassengerId" : y_test.values  ,"Survived": y_pred ,})
+        ##Download the CSV
+        dataframe.to_csv("Submission_Linear.csv",index= False)
+
+
+survivorList = TitanicSurvivors
+
+Train_dataset,Test_dataset,test_Passenger_Ids = survivorList.Load_data()
+Train_dataset,Test_dataset =survivorList.Remove_UnwantedColumns_InvalidData(Train_dataset,Test_dataset)
+Train_dataset,Test_dataset=survivorList.EncodingLabel(Train_dataset,Test_dataset)
+X_train,X_test,y_train,y_test = survivorList.SplittingDataFor_Training_Testing(Train_dataset,Test_dataset)
+#survivorList.Survivor_LogisticRegression(X_train,X_test,y_train,y_test,test_Passenger_Ids)
+survivorList.Survivor_LinearRegression(X_train,X_test,y_train,y_test,test_Passenger_Ids)
