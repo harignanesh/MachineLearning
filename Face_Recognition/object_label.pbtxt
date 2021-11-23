@@ -1,0 +1,310 @@
+item
+{
+  id: 1
+  name: 'Megawati_Sukarnoputri'
+}
+item
+{
+  id: 2
+  name: 'Juan_Carlos_Ferrero'
+}
+item
+{
+  id: 3
+  name: 'Vicente_Fox'
+}
+item
+{
+  id: 4
+  name: 'Amelie_Mauresmo'
+}
+item
+{
+  id: 5
+  name: 'Alvaro_Uribe'
+}
+item
+{
+  id: 6
+  name: 'Jose_Maria_Aznar'
+}
+item
+{
+  id: 7
+  name: 'Atal_Bihari_Vajpayee'
+}
+item
+{
+  id: 8
+  name: 'Lleyton_Hewitt'
+}
+item
+{
+  id: 9
+  name: 'Michael_Bloomberg'
+}
+item
+{
+  id: 10
+  name: 'Jeremy_Greenstock'
+}
+item
+{
+  id: 11
+  name: 'Tiger_Woods'
+}
+item
+{
+  id: 12
+  name: 'George_Robertson'
+}
+item
+{
+  id: 13
+  name: 'Roh_Moo-hyun'
+}
+item
+{
+  id: 14
+  name: 'John_Negroponte'
+}
+item
+{
+  id: 15
+  name: 'Serena_Williams'
+}
+item
+{
+  id: 16
+  name: 'Tony_Blair'
+}
+item
+{
+  id: 17
+  name: 'Hans_Blix'
+}
+item
+{
+  id: 18
+  name: 'Luiz_Inacio_Lula_da_Silva'
+}
+item
+{
+  id: 19
+  name: 'Vladimir_Putin'
+}
+item
+{
+  id: 20
+  name: 'Tom_Daschle'
+}
+item
+{
+  id: 21
+  name: 'Ariel_Sharon'
+}
+item
+{
+  id: 22
+  name: 'Naomi_Watts'
+}
+item
+{
+  id: 23
+  name: 'Recep_Tayyip_Erdogan'
+}
+item
+{
+  id: 24
+  name: 'Ricardo_Lagos'
+}
+item
+{
+  id: 25
+  name: 'Alejandro_Toledo'
+}
+item
+{
+  id: 26
+  name: 'Saddam_Hussein'
+}
+item
+{
+  id: 27
+  name: 'Igor_Ivanov'
+}
+item
+{
+  id: 28
+  name: 'Bill_Clinton'
+}
+item
+{
+  id: 29
+  name: 'Paul_Bremer'
+}
+item
+{
+  id: 30
+  name: 'David_Beckham'
+}
+item
+{
+  id: 31
+  name: 'Laura_Bush'
+}
+item
+{
+  id: 32
+  name: 'Angelina_Jolie'
+}
+item
+{
+  id: 33
+  name: 'Gerhard_Schroeder'
+}
+item
+{
+  id: 34
+  name: 'Colin_Powell'
+}
+item
+{
+  id: 35
+  name: 'Gray_Davis'
+}
+item
+{
+  id: 36
+  name: 'John_Ashcroft'
+}
+item
+{
+  id: 37
+  name: 'Jiang_Zemin'
+}
+item
+{
+  id: 38
+  name: 'Hamid_Karzai'
+}
+item
+{
+  id: 39
+  name: 'Carlos_Menem'
+}
+item
+{
+  id: 40
+  name: 'Andre_Agassi'
+}
+item
+{
+  id: 41
+  name: 'Hugo_Chavez'
+}
+item
+{
+  id: 42
+  name: 'Arnold_Schwarzenegger'
+}
+item
+{
+  id: 43
+  name: 'Jennifer_Aniston'
+}
+item
+{
+  id: 44
+  name: 'Silvio_Berlusconi'
+}
+item
+{
+  id: 45
+  name: 'Nestor_Kirchner'
+}
+item
+{
+  id: 46
+  name: 'Rudolph_Giuliani'
+}
+item
+{
+  id: 47
+  name: 'Guillermo_Coria'
+}
+item
+{
+  id: 48
+  name: 'George_W_Bush'
+}
+item
+{
+  id: 49
+  name: 'Donald_Rumsfeld'
+}
+item
+{
+  id: 50
+  name: 'Jean_Chretien'
+}
+item
+{
+  id: 51
+  name: 'Jacques_Chirac'
+}
+item
+{
+  id: 52
+  name: 'Pete_Sampras'
+}
+item
+{
+  id: 53
+  name: 'Jack_Straw'
+}
+item
+{
+  id: 54
+  name: 'Kofi_Annan'
+}
+item
+{
+  id: 55
+  name: 'Jennifer_Capriati'
+}
+item
+{
+  id: 56
+  name: 'Winona_Ryder'
+}
+item
+{
+  id: 57
+  name: 'Tom_Ridge'
+}
+item
+{
+  id: 58
+  name: 'Junichiro_Koizumi'
+}
+item
+{
+  id: 59
+  name: 'Gloria_Macapagal_Arroyo'
+}
+item
+{
+  id: 60
+  name: 'Jennifer_Lopez'
+}
+item
+{
+  id: 61
+  name: 'Mahmoud_Abbas'
+}
+item
+{
+  id: 62
+  name: 'Lindsay_Davenport'
+}
